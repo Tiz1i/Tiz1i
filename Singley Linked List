@@ -1,0 +1,94 @@
+class Node {
+    constructor(data){
+        this.value=data;
+        this.next=null;
+    }
+}
+
+class SLL {
+    constructor() {
+        this.head = null;
+    }
+
+  addToFront(value){
+  var new_node = new Node(value)
+  if(this.head == null){
+    this.head=new_node;
+    // console.log(new_node.value)
+
+    return this
+    }
+  new_node.next= this.head
+  this.head=new_node
+  // console.log(new_node.value)
+    
+  }
+  displayList(){
+    if (this.head == null) {
+      console.log("SLL is empty")
+      return this;
+    }
+   
+    var runner = this.head;
+    while (runner !== null ) {
+      console.log( runner.value );
+      runner = runner.next;
+    }
+    
+  } 
+
+  pop_front() {
+  if(this.head != null) {
+    
+    //1. if head is not null, create a
+    //   temp node pointing to head
+    var temp = this.head;
+
+    //2. move head to next of head
+    this.head = this.head.next; 
+
+    //3. delete temp node
+    // free(temp); 
+  }
+}
+
+  
+ 
+    // constructor, other methods, removed for brevity
+ front() {
+   if(this.head != null) {
+    
+    //1. if head is not null, create a
+    //   temp node pointing to head
+    var temp = this.head.value;
+
+    //2. move head to next of head
+    // temp = this.head.next; 
+
+    //3. delete temp node
+    // free(temp); 
+     return temp;
+  }else{
+      console.log("SLL is empty")
+      return this;
+  }
+   
+   
+    	
+    }
+ 
+
+
+  
+}
+
+var my_newSLL = new SLL();
+
+my_newSLL.addToFront("flogert").addToFront("Melis");
+my_newSLL.displayList();
+
+my_newSLL.pop_front();
+my_newSLL.displayList();
+
+
+console.log(my_newSLL.front())
